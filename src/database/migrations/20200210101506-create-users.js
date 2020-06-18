@@ -7,6 +7,11 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
+      administrador: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
+        allownull: false,
+      },
       name: {
         type: Sequelize.STRING,
         allownull: false,
@@ -17,7 +22,12 @@ module.exports = {
         unique: true, // nao pode repitir o valor
       },
 
-      criated_at: {
+      password_hash: {
+        type: Sequelize.STRING,
+        allownull: false,
+      },
+
+      created_at: {
         type: Sequelize.DATE,
         allownull: false,
       },
