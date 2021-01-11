@@ -1,11 +1,14 @@
 import { Router } from 'express';
 
+import IndexController from './app/controllers/IndexController';
 import UserController from './app/controllers/UserController';
 import SessionController from './app/controllers/SessionController';
 
 import authMiddleware from './app/middlewares/auth';
 
 const routes = new Router();
+
+routes.get('/', IndexController.index);
 
 routes.post('/users', UserController.store);
 routes.post('/sessions', SessionController.store);
